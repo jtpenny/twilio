@@ -1,0 +1,6 @@
+[
+    {"did": "*","step": "#1", "command": "gatherSay", "params": {"txt": "We do not recognize your number. Press 1 to verify you are human.", "numDigits": 1, "timeout": 5}}, 
+    {"did": "*","step": "#2", "command": "say", "params": {"message": "We did not receive any input. Goodbye!"}}, 
+    {"did": "*","step": "*#1", "command": "say", "params": {"message": "The person you called is not available. Please leave your message at the beep."}}, 
+    {"did": "*","step": "*#2", "command": "record", "params": {"transcribe": "true", "timeout": 10, "maxLength": 20, "transcribeCallback": "http://twimlets.com/voicemail?Email=<email>"}}
+]
