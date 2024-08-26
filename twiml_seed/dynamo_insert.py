@@ -12,7 +12,7 @@ r2 = twiml_table.query(
 )
 print(r2)
 if len(r2['Items']) == 0:
-    with open("twiml-new.json") as json_file:
+    with open("twiml.json") as json_file:
         items = json.load(json_file)
         for item in items:
             print(item)
