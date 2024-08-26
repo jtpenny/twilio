@@ -8,14 +8,14 @@ Resources:
         Description: Dependencies for twilio
         ContentUri: dependencies/
         CompatibleRuntimes:
-          - python3.6
+          - python3.9
         RetentionPolicy: Retain
     VoicedFunction:
         Type: AWS::Serverless::Function 
         Properties:
             CodeUri: voice/src/
             Handler: app.lambda_handler
-            Runtime: python3.6
+            Runtime: python3.9
             Environment:
               Variables:
                 twiml_table: !Ref TwimlTable
