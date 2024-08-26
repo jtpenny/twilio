@@ -3,14 +3,14 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-        python: 3.7
+        python: 3.11
     commands:
       - pip install --upgrade awscli
   pre_build:
     commands:
   build:
     commands:
-      - PY_DIR='dependencies/python/lib/python3.6/site-packages'
+      - PY_DIR='dependencies/python/lib/python3.11/site-packages'
       - mkdir -p $PY_DIR  
       - pip install -r requirements.txt --no-deps -t $PY_DIR 
       - aws cloudformation package --template-file template.yaml --s3-bucket $BUILD_OUTPUT_BUCKET --output-template-file packaged.yaml
